@@ -414,7 +414,7 @@ end
 Everything is almost setup according to the basic configuration except for the `webserver` node, as its credentials may differ depending on user setup of user login credentials. These can be changed inside the `hosts` file by simply modifying the `ansible_user` variable to the account username and the `ansible_password` variable to the account password. The user account must be a sudoer and thus needs to be granted by providing a sudo password in the `ansible_become_pass` variable. Preferrably, passwordless sudo can be setup on the `webserver` node as well and the `ansible_become_pass` variable can be left as blank (`ansible_become_pass = ""`). See [hosts](hosts) file for more information.
 
 ### Executing the Playbook/s
-Several playbooks were constructed dedicated for each specific set of tasks for specific set of hosts. Ultimately, these were consolidated into a [master playbook](playbook.yaml) arranged in an ideal sequence of execution. This can be executed by simply running the command below:
+Several playbooks were constructed dedicated for each specific set of tasks for specific set of hosts. Ultimately, these were consolidated into a [master playbook](playbook.yaml) arranged in an ideal sequence of execution. This can be executed by simply running the command below from the Ansible control node:
 
 ```bash
 $ ansible-playbook playbook.yaml
