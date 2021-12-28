@@ -17,7 +17,7 @@ Code written and design made by: **Pau Cabral**
 **NOTE:** In this design's case, KVM support for nested virtualization is not required since the routers do not need VMs of their own.
 
 ## Network Topology
-<img src="assets/topology.png">
+<img src="assets/topology.PNG">
 
 ### Devices
 * 1 x Ansible Control Node (DEVASC Lab VM)
