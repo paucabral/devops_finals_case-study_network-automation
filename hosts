@@ -1,0 +1,15 @@
+webserver ansible_host=10.0.0.4 ansible_user=jpcabral-tip ansible_password=password ansible_become=true ansible_become_user=root ansible_become_method=sudo ansible_become_pass=""
+
+[routers]
+R1 ansible_host=10.0.0.1
+R2 ansible_host=10.0.0.2
+
+[routers:vars]
+ansible_user=cisco
+ansible_password=cisco123
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_port=22
+ansible_become=yes
+ansible_become_method=enable
+ansible_become_pass=cisco123

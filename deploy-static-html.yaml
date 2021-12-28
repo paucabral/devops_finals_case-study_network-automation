@@ -1,0 +1,17 @@
+---
+- name: Deploy a static page on an Apache web server
+  hosts: webserver
+  gather_facts: false
+  
+  tasks:
+    - name: Include variables inside all the .yaml files in the vars directory
+      include_vars:
+        dir: vars
+        extensions:
+          - 'yaml'
+
+    - name: Copy index.html
+      copy:
+        src: index.html
+        dest: "/var/www/html/index.html"
+        mode: '0755'

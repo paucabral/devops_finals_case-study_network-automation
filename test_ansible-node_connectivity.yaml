@@ -1,0 +1,16 @@
+---
+- name: Testing the connectivity of the routers to the Ansible management node
+  hosts: routers
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Include variables inside all the .yaml files in the vars directory
+      include_vars:
+        dir: vars
+        extensions:
+          - 'yaml'
+
+    - name: Check connectivity of hosts to the management node
+      ios_ping:
+        dest: "{{ ansible_management_node }}"

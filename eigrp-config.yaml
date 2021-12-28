@@ -1,0 +1,58 @@
+---
+- name: Configure EIGRP on R1
+  hosts: R1
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Add a loopback interface on R1
+      ios_config:
+        lines:
+          - ip address 1.1.1.1 255.255.255.255
+        parents: interface loopback 0
+
+    - name: Configure EIGRP on R1
+      ios_config:
+        lines:
+          - network 1.1.1.1
+        parents: router eigrp 333
+
+- name: Configure EIGRP on R2
+  hosts: R2
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Add a loopback interface on R2
+      ios_config:
+        lines:
+          - ip address 2.2.2.2 255.255.255.255
+        parents: interface loopback 0
+
+    - name: Configure EIGRP on R2
+      ios_config:
+        lines:
+          - network 2.2.2.2
+        parents: router eigrp 333
+
+- name: Display and backup the routes
+  hosts: routers
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Display the routes
+      ios_command:
+        commands:
+          - show ip route
+      register: output
+    
+    - name: Create a dedicated backups directory
+      file:
+        path: backups/
+        state: directory
+
+    - name: Save the output of ipv4 addresses to a file
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "backups/showiproute_{{ inventory_hostname }}.txt"

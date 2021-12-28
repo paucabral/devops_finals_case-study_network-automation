@@ -1,0 +1,10 @@
+---
+- name: Save the running configuration of the routers as their respective startup configuration
+  hosts: routers
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Copy the running conifiguration to the location of the startup configuration
+      ios_config:
+        save_when: modified

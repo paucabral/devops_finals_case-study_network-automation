@@ -1,0 +1,19 @@
+---
+# Initial configuration testing
+- import_playbook: test_ansible-node_connectivity.yaml
+- import_playbook: backup_startup-config.yaml
+- import_playbook: get_ipv4.yaml
+
+# Network Topic 1 - Dynamic Routing (EIGRP)
+- import_playbook: eigrp-config.yaml
+# Network Topic 2 - Network Address Translation (NAT)
+- import_playbook: nat-config.yaml
+# Network Topic 3 - Access Lists (ACLs)
+- import_playbook: acl-config.yaml
+
+# Saving configuration
+- import_playbook: backup_running-config.yaml
+# - import_playbook: save_config.yaml
+
+# Additional: Deployment of a static web page
+- import_playbook: deploy-static-html.yaml
