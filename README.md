@@ -247,29 +247,6 @@ end
 
 #### Router 2
 ```
-Using 1889 out of 57336 bytes!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-
-!
-version 12.4
-service timestamps debug datetime msec
-service timestamps log datetime msec
-no service password-encryption
-!
 hostname R2
 !
 boot-start-marker
