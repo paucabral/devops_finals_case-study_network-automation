@@ -1,0 +1,18 @@
++++ R2 with via 'cli': executing command 'show ip interface brief' +++
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            192.168.254.1   YES NVRAM  up                    up      
+Serial0/0                  10.0.0.2        YES NVRAM  up                    up      
+FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
+Serial0/1                  unassigned      YES NVRAM  administratively down down    
+Serial0/2                  unassigned      YES NVRAM  administratively down down    
+Serial0/3                  unassigned      YES NVRAM  administratively down down    
+Serial0/4                  unassigned      YES NVRAM  administratively down down    
+FastEthernet1/0            unassigned      YES NVRAM  administratively down down    
+Serial2/0                  unassigned      YES NVRAM  administratively down down    
+Serial2/1                  unassigned      YES NVRAM  administratively down down    
+Serial2/2                  unassigned      YES NVRAM  administratively down down    
+Serial2/3                  unassigned      YES NVRAM  administratively down down    
+NVI0                       192.168.254.1   YES unset  up                    up      
+Loopback0                  2.2.2.2         YES manual up                    up      
+R2#

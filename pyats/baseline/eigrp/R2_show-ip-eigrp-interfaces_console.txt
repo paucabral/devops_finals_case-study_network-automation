@@ -1,0 +1,8 @@
++++ R2 with via 'cli': executing command 'show ip eigrp interfaces' +++
+show ip eigrp interfaces
+IP-EIGRP interfaces for process 333
+
+                        Xmit Queue   Mean   Pacing Time   Multicast    Pending
+Interface        Peers  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+Se0/0              1        0/0         7       0/15          50           0
+R2#

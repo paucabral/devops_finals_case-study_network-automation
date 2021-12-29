@@ -1,0 +1,11 @@
+---
+- name: Deploy a static page on an Apache web server
+  hosts: webserver
+  gather_facts: false
+  
+  tasks:
+    - name: Copy index.html
+      copy:
+        src: ../files/index.html
+        dest: "/var/www/html/index.html"
+        mode: '0755'

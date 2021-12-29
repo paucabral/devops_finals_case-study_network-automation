@@ -1,0 +1,22 @@
+---
+- name: Backup the startup configuration of the routers
+  hosts: routers
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Display the startup configuration of the hosts
+      ios_command:
+        commands:
+        - show startup-config
+      register: config
+    
+    - name: Create a dedicated backups directory
+      file:
+        path: ../backups/
+        state: directory
+
+    - name: Save the output of running configurations to a file
+      copy:
+        content: "{{ config.stdout[0] }}"
+        dest: "../backups/{{ inventory_hostname }}_startup-config_bak.ios"

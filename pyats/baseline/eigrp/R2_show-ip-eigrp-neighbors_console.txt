@@ -1,0 +1,7 @@
++++ R2 with via 'cli': executing command 'show ip eigrp neighbors' +++
+show ip eigrp neighbors
+IP-EIGRP neighbors for process 333
+H   Address                 Interface       Hold Uptime   SRTT   RTO  Q  Seq
+                                            (sec)         (ms)       Cnt Num
+0   10.0.0.1                Se0/0             13 00:53:58    7   200  0  3
+R2#

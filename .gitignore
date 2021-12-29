@@ -1,0 +1,5 @@
+venv/*
+backups/*
+pyats/baseline/*/connection_*.txt
+pyats/tests/*
+pyats/differences/*

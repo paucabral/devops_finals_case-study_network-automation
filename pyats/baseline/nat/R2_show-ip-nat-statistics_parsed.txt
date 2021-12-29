@@ -1,0 +1,26 @@
+{
+  "_exclude": [],
+  "active_translations": {
+    "dynamic": 0,
+    "extended": 0,
+    "static": 1,
+    "total": 1
+  },
+  "appl_doors": 0,
+  "cef_punted_pkts": 0,
+  "cef_translated_pkts": 882,
+  "dynamic_mappings": {},
+  "expired_translations": 6,
+  "hits": 882,
+  "interfaces": {
+    "inside": [
+      "FastEthernet0/0"
+    ],
+    "outside": [
+      "Serial0/0"
+    ]
+  },
+  "misses": 0,
+  "normal_doors": 0,
+  "queued_pkts": 0
+}

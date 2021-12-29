@@ -1,0 +1,35 @@
+{
+  "_exclude": [
+    "uptime",
+    "hold"
+  ],
+  "eigrp_instance": {
+    "": {
+      "vrf": {
+        "default": {
+          "address_family": {
+            "ipv4": {
+              "eigrp_interface": {
+                "Serial0/0": {
+                  "eigrp_nbr": {
+                    "10.0.0.2": {
+                      "hold": 11,
+                      "last_seq_number": 3,
+                      "peer_handle": 0,
+                      "q_cnt": 0,
+                      "rto": 200,
+                      "srtt": 0.013,
+                      "uptime": "00:55:05"
+                    }
+                  }
+                }
+              },
+              "name": "",
+              "named_mode": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

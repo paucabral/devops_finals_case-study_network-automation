@@ -1,0 +1,22 @@
+---
+- name: Getting the IPv4 addresses of the routers
+  hosts: routers
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Display the interface ipv4 addresses of the hosts
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: output
+    
+    - name: Create a dedicated backups directory
+      file:
+        path: ../backups/
+        state: directory
+
+    - name: Save the output of ipv4 addresses to a file
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "../backups/showipv4_int_{{ inventory_hostname }}.txt"

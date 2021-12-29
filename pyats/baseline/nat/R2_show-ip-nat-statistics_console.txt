@@ -1,0 +1,15 @@
++++ R2 with via 'cli': executing command 'show ip nat statistics' +++
+show ip nat statistics
+Total active translations: 1 (1 static, 0 dynamic; 0 extended)
+Outside interfaces:
+  Serial0/0
+Inside interfaces: 
+  FastEthernet0/0
+Hits: 882  Misses: 0
+CEF Translated packets: 882, CEF Punted packets: 0
+Expired translations: 6
+Dynamic mappings:
+Appl doors: 0
+Normal doors: 0
+Queued Packets: 0
+R2#

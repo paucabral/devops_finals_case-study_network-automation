@@ -1,0 +1,20 @@
+---
+- name: Configure ACL on R2
+  hosts: R2
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Configure ACL inbound
+      ios_config:
+        lines:
+          - ip access-group 110 in
+        parents: interface FastEthernet0/0
+
+    - name: Create inbound ACL rules for R2
+      ios_config:
+        lines:
+          - access-list 110 deny icmp any any echo-reply
+          - access-list 110 permit ip any any
+        before: no access-list 110
+        match: exact
