@@ -1,5 +1,5 @@
 # Network Automation Using Ansible
-A finals case study for ***CPE 028-CPE41S3 - Developing Applications and Automation***.<br>
+Final case study for ***CPE 028-CPE41S3 - Developing Applications and Automation***.<br>
 
 Code written and design made by: **Pau Cabral**
 
@@ -8,11 +8,11 @@ Code written and design made by: **Pau Cabral**
 * Computer installed with GNS3 (preferably with 16GB RAM or higher)
 ### Software
 * GNS3
-* Cisco 3725 appliance and IOS image
-* VirtualBox (or other Virtualization Software/Hypervisor)
 * GNS3 VM (if not using Linux natively)
+* VirtualBox (or other Virtualization Software/Hypervisor)
+* Cisco 3725 appliance and IOS image
 * Ubuntu Image
-* Linux Distribution with *Ansible* Support (preferably DEVASC Lab VM)
+* Linux Distribution with *Ansible* and *Python 3 (with pip)* installed (preferably DEVASC Lab VM)
 
 **NOTE:** In this design's case, KVM support for nested virtualization is not required since the routers do not need VMs of their own.
 
@@ -430,3 +430,25 @@ $ ansible-playbook playbook.yaml
 * acl-config.yaml
 * backup_running-config.yaml
 * deploy-static-html.yaml
+
+## Automated Testing Using PyATS and Genie
+Baseline configurations were provided as point of comparisons in checking if the deployed configurations are correct and working as intended. The tests includes parsing and difference checking on *ACL*, *NAT*, *EIGRP*, and updates on the interfaces among the routers. The baseline configurations are localated inside their respective sub-directories in the `pyats` directory along with the `testbed.yaml`, which specifies the required SSH credentials for the routers. Further, the tests are automated from creating the `tests` directory up to generating the configuration `differences` files (if there is any) through *genie*, executed inside the `test.sh` script. To automate the testing process, simply run the command below:
+
+```bash
+$ (venv) test.sh
+```
+
+**NOTE:** Ensure that the *pyATS* library is installed using the `pip3 install pyats[full]` or `pip3 install -r requirements.txt` command in a virtual environment (`venv`) and it is activated. To create the environment, follow the commands below.
+
+```bash
+$ python3 -m venv venv
+```
+
+```bash
+$ source venv/bin/activate
+```
+```bash
+$ (venv) pip3 install pyats[full]
+# or alternatively
+$ (venv) pip3 install -r requirements.txt
+```
