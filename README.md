@@ -1,7 +1,7 @@
 # Network Automation Using Ansible
 Final case study for ***CPE 028-CPE41S3 - Developing Applications and Automation***.<br>
 
-Code written and design made by: **Pau Cabral**
+*code written and design made by:* ***Pau Cabral***
 
 ## Requirements
 ### Hardware
