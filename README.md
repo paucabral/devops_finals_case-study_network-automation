@@ -5,7 +5,7 @@ Final case study for ***CPE 028-CPE41S3 - Developing Applications and Automation
 
 ## Requirements
 ### Hardware
-* Computer capable of running GNS3 (preferably with 16GB RAM or higher)
+* Computer capable of running GNS3 (preferably with 4 CPU Cores and 16GB RAM or higher)
 ### Software
 * GNS3
 * GNS3 VM (if not using Linux natively)
